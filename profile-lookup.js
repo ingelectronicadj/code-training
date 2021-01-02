@@ -1,0 +1,51 @@
+// La funcion debe verificar si el nombre es el nombre de un contacto real 
+// y la propiedad dada (prop) es una propiedad de ese contacto.
+var contacts = [{
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+
+function lookUpProfile(name, prop) {
+    // Only change code below this line
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName == name) {
+            if (contacts[i][prop] != undefined) {
+                console.log('El valor de la propiedad ' + prop + ': ' + contacts[i][prop])
+                return contacts[i][prop];
+            } else {
+                return "No such property";
+            }
+        }
+    }
+    return "No such contact";
+    // Only change code above this line
+}
+
+//lookUpProfile("Akira", "likes");
+//lookUpProfile("Kristian", "lastName");
+//lookUpProfile("Bob", "potato");
+//lookUpProfile("Sherlock", "likes");
+lookUpProfile("Akira", "address")
